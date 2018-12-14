@@ -550,8 +550,6 @@ type Configuration struct {
 
 	// Block all requests with given Referer headers
 	BlockReferers []string `json:"block-referers"`
-
-	DisableCatchAll bool `json:"disable-catch-all"`
 }
 
 // NewDefault returns the default nginx configuration
@@ -675,7 +673,6 @@ func NewDefault() Configuration {
 		SyslogPort:                   514,
 		NoTLSRedirectLocations:       "/.well-known/acme-challenge",
 		NoAuthLocations:              "/.well-known/acme-challenge",
-		DisableCatchAll:              false,
 	}
 
 	if klog.V(5) {
